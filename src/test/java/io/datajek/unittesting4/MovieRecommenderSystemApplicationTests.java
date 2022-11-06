@@ -7,6 +7,7 @@ class MovieRecommenderSystemApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

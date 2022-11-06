@@ -9,15 +9,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes=MovieRecommenderSystemApplication.class)
-class RecommenderImplementationSpringTest {
+//@ContextConfiguration(locations="/appContext.xml")
+@ContextConfiguration(locations="/testContext.xml")
+class RecommenderImplementationXmlConfigTest {
 
     @Autowired
     private RecommenderImplementation recommenderImpl;
 
     @Test
-    public void testRecommendMovies() {
-        assertArrayEquals(new String[] {"Finding Nemo", "Ice Age", "Toy Story"}, recommenderImpl.recommendMovies("Finding Dory"));
+    void testRecommendMovies() {
+        assertArrayEquals(new String[] {"Happy Feet", "Ice Age", "Shark Tale"}, recommenderImpl.recommendMovies("Finding Dory"));
     }
-
 }
